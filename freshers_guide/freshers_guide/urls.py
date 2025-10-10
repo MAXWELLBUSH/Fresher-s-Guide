@@ -38,6 +38,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
 
     path("accounts/logout/", auth_views.LogoutView.as_view(next_page="login")),
+     path('hostels/', include('hostels.urls')),
 
     
 

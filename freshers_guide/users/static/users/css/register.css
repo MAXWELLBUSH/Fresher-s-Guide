@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 105%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Center card container */
+.container {
+  background: #ffffff;
+  width: 420px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #182848;
+  transform: translateY(10px);
+}
+
+/* Title */
+.container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #233d8c;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+form label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #4b6cb7;
+  outline: none;
+}
+
+/* Help texts (like password rules) */
+form ul {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  list-style-position: inside;
+}
+
+/* Submit button */
+button {
+  background: linear-gradient(90deg, #4b6cb7, #3559a2);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3559a2;
+}
+
+/* Login link */
+.helper {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.helper a {
+  color: #4b6cb7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.helper a:hover {
+  text-decoration: underline;
+}

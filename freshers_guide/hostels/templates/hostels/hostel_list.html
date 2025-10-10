@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Hostels</h2>
+<ul>
+  {% for hostel in hostels %}
+  <li>
+    <a href="{% url 'hostel_detail' hostel.pk %}">{{ hostel.name }}</a>
+    - Capacity: {{ hostel.capacity }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

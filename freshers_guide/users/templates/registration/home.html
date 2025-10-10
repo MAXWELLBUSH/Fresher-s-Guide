@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Freshers' Guide{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="mb-4">🎓 Welcome to Freshers' Guide</h1>
+
+    {% if user.is_authenticated %}
+        <div class="p-4 bg-white shadow rounded d-inline-block">
+            <p class="fs-5">Hello, <strong>{{ user.username }}</strong> 👋</p>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger mt-2">Logout</button>
+            </form>
+        </div>
+    {% else %}
+        <p class="fs-5 mb-3">Please log in or register to access campus information.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-success">Register</a>
+    {% endif %}
+</div>
+{% endblock %}

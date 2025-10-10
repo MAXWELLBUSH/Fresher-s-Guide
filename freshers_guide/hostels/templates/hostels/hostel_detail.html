@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ hostel.name }}</h2>
+<p><strong>Location:</strong> {{ hostel.location }}</p>
+<p><strong>Capacity:</strong> {{ hostel.capacity }}</p>
+<p><strong>Contact:</strong> {{ hostel.contact }}</p>
+<p><strong>Description:</strong> {{ hostel.description }}</p>
+<a href="{% url 'hostel_list' %}">← Back to list</a>
+{% endblock %}
