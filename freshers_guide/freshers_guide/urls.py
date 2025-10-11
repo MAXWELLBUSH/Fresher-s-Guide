@@ -40,7 +40,7 @@ urlpatterns = [
     path("accounts/logout/", auth_views.LogoutView.as_view(next_page="login")),
     path('hostels/', include('hostels.urls')),
     path('services/', include('services.urls')),
-
+    path('faq/', include('faq.urls')),
     
 
     
