@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Services{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-5">Student Services</h1>
+
+<!-- Optional: Filters could go here -->
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for service in services %}
+    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h2 class="text-xl font-semibold mb-1">{{ service.name }}</h2>
+        <p class="text-gray-600 mb-1"><strong>Type:</strong> {{ service.get_type_display }}</p>
+        <p class="text-gray-600 mb-1"><strong>Location:</strong> {{ service.office_location }}</p>
+        {% if service.opening_hours %}
+        <p class="text-gray-600 mb-1"><strong>Hours:</strong> {{ service.opening_hours }}</p>
+        {% endif %}
+        {% if service.contact %}
+        <p class="text-gray-600 mb-1"><strong>Contact:</strong> {{ service.contact }}</p>
+        {% endif %}
+        <p class="mt-2 text-gray-700">{{ service.description|truncatewords:30 }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
