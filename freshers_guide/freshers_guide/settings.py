@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'hostels',
     'services',
     'faq',
+    'locations',
+    'profiles',
 ]
 
 MIDDLEWARE = [

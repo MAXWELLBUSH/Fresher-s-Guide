@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Locations - Freshers' Guide</title>
+    <link rel="stylesheet" href="{% static 'locations/css/locations.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">🎓 Freshers' Guide</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/hostels/">Hostels</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/locations/">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="/faq/">FAQ</a></li>
+        {% if user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href="/profiles/">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout/">Logout</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="/login/">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/register/">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <h1 class="page-title">Campus Locations</h1>
+
+  {% if locations %}
+    <div class="location-list">
+      {% for location in locations %}
+        <div class="location-card">
+          <h3 class="location-name">{{ location.name }}</h3>
+          <p><strong>Type:</strong> {{ location.type }}</p>
+          <p><strong>Location:</strong> Block {{ location.block }}, {{ location.floor }}</p>
+          <p><strong>Hours:</strong> {{ location.hours }}</p>
+          {% if location.contact %}
+            <p><strong>Contact:</strong> {{ location.contact }}</p>
+          {% endif %}
+          <p>{{ location.description }}</p>
+          {% if location.map_link %}
+            <a href="{{ location.map_link }}" class="btn btn-primary btn-sm" target="_blank">View on Map</a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No campus locations added yet.</p>
+  {% endif %}
+</main>
+
+<footer>
+  <p class="mb-0">&copy; 2025 Freshers' Guide</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

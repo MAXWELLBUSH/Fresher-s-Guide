@@ -1,0 +1,65 @@
+:root {
+  --primary: #13a5e3;
+  --accent: #ffca28;
+  --bg-light: #fef6f3;
+  --text-dark: #212529;
+}
+
+body {
+  background-color: var(--bg-light);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 90px; /* offset for fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, var(--primary), #1565c0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.page-title {
+  color: var(--primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Location Cards */
+.location-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.location-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.location-name {
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}

@@ -41,6 +41,8 @@ urlpatterns = [
     path('hostels/', include('hostels.urls')),
     path('services/', include('services.urls')),
     path('faq/', include('faq.urls')),
+    path('locations/', include('locations.urls')),
+    path('profiles/', include('profiles.urls')),
     
 
     
